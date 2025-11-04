@@ -1,8 +1,3 @@
-import React from 'react';
-import { User } from 'lucide-react';
-import { useState, useEffect } from 'react';
-
-
 function Formation() {
 
  const formations = [

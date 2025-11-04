@@ -1,5 +1,4 @@
 import { Code, Briefcase } from 'lucide-react';
-import React from 'react';
 
 function compétences() {
     const competences = [

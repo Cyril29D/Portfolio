@@ -1,4 +1,3 @@
-import React from 'react';
 import { Send } from 'lucide-react';
 import { useState } from 'react';
 import {Mail} from 'lucide-react';

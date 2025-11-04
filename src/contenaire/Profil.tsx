@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
-import Useffect from 'react';
+
 
 function Profil() {
 const [displayText, setDisplayText] = useState('');

@@ -1,7 +1,11 @@
-import React from 'react';
 import { Menu, X, Mail, Code, Briefcase, GraduationCap, User } from 'lucide-react';
-
-function Navigateur({ onPageChange, currentPage, isMenuOpen, setIsMenuOpen }) {
+interface NavProps {
+  onPageChange: (page: string) => void;
+  currentPage: string;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (v: boolean) => void;
+}
+function Navigateur({  onPageChange, currentPage, isMenuOpen, setIsMenuOpen }: NavProps) {
   const navItems = [
     { id: 'profil', label: 'Profil', icon: User },
     { id: 'formation', label: 'Formation', icon: GraduationCap },
@@ -10,7 +14,7 @@ function Navigateur({ onPageChange, currentPage, isMenuOpen, setIsMenuOpen }) {
     { id: 'contact', label: 'Contact', icon: Mail }
   ];
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (id: string) => {
     onPageChange(id);
     setIsMenuOpen(false);
   };

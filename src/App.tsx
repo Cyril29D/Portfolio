@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail, Phone, Linkedin, Github, Code, Briefcase, GraduationCap, User, Send } from 'lucide-react';
+import { Menu, X, Mail, Code, Briefcase, GraduationCap, User } from 'lucide-react';
 
 import Profil from './contenaire/Profil';
 import Formation from './contenaire/Formation';
@@ -11,13 +11,7 @@ import Competences from './contenaire/Competences';
 function App() {
  const [currentPage, setCurrentPage] = useState('profil');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { id: 'profil', label: 'Profil', icon: User },
@@ -28,7 +22,7 @@ function App() {
     { id: 'contact', label: 'Contact', icon: Mail }
   ];
 
-  const handleNavClick = (id) => {
+  const handleNavClick = (id: string) => {
     setCurrentPage(id);
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
