@@ -1,78 +1,74 @@
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React from 'react';
+import { Menu, X, Mail, Code, Briefcase, GraduationCap, User } from 'lucide-react';
 
-interface NavigateurProps {
-  onPageChange: (page: string) => void;
-  currentPage: string;
-}
-
-const Navigateur: React.FC<NavigateurProps> = ({ onPageChange, currentPage }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+function Navigateur({ onPageChange, currentPage, isMenuOpen, setIsMenuOpen }) {
   const navItems = [
-    { id: 'profil', label: 'Profil' },
-    { id: 'formation', label: 'Formation' },
-    { id: 'experience', label: 'Expérience' },
-    { id: 'projet', label: 'Projet' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'profil', label: 'Profil', icon: User },
+    { id: 'formation', label: 'Formation', icon: GraduationCap },
+    { id: 'experience', label: 'Expérience', icon: Briefcase },
+    { id: 'projet', label: 'Projets', icon: Code },
+    { id: 'contact', label: 'Contact', icon: Mail }
   ];
 
-  const handleNavClick = (id: string) => {
+  const handleNavClick = (id) => {
     onPageChange(id);
     setIsMenuOpen(false);
   };
 
   return (
     <>
-
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-4 right-4 z-50 p-2 rounded-lg bg-gray-800 text-white md:hidden hover:bg-gray-700 transition-colors"
+        className="md:hidden p-2 rounded-lg bg-white/5 text-white hover:bg-white/10 transition-colors"
       >
-        {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+      <div className="hidden md:flex space-x-1">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 ${
+                currentPage === item.id
+                  ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-purple-500/50'
+                  : 'text-gray-400 hover:bg-white/5 hover:text-white'
+              }`}
+            >
+              <Icon size={18} />
+              <span className="font-medium">{item.label}</span>
+            </button>
+          );
+        })}
+      </div>
 
-      <nav className={`
-        fixed md:static
-        top-0 ${isMenuOpen ? 'left-0' : '-left-64'} md:left-0
-        w-64 md:w-48
-        h-screen
-        bg-gray-900
-        p-4
-        transition-all duration-300 ease-in-out
-        z-40
-        overflow-y-auto
-      `}>
-        <ul className="flex flex-col gap-4 mt-16 md:mt-0">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => handleNavClick(item.id)}
-                className={`
-                  italic block w-full text-left rounded-lg px-4 py-2
-                  text-sm font-medium 
-                  ${currentPage === item.id
-                    ? 'bg-gray-100 text-gray-700'
-                    : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
-                  }
-                  transition duration-300 transform hover:scale-105
-                `}
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {isMenuOpen && (
+        <div className="md:hidden bg-gray-950/98 backdrop-blur-lg border-t border-white/5">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`w-full px-4 py-3 rounded-lg flex items-center gap-3 transition-all ${
+                    currentPage === item.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white'
+                      : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                  }`}
+                >
+                  <Icon size={20} />
+                  <span className="font-medium">{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
-};
+}
 
 export default Navigateur;

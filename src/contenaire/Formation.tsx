@@ -1,35 +1,78 @@
 import React from 'react';
+import { User } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const Formation: React.FC = () => {
+
+function Formation() {
+
+ const formations = [
+    {
+      title: 'Master of Sciences',
+      school: 'Epitech',
+      description: 'Formation excellence en informatique et technologies',
+      period: '2025 - 2028',
+      color: 'from-cyan-500 to-blue-500',
+      skills: ['Intelligence Artificielle', 'Cloud Computing', 'Architecture Logicielle', 'Management de projet']
+    },
+    {
+      title: 'BTS SIO (SLAM)',
+      school: 'Services Informatiques aux Organisations',
+      description: 'Option Solutions Logicielles et Applications Métiers',
+      period: '2022 - 2024',
+      color: 'from-purple-500 to-pink-500',
+      skills: ['Développement Web', 'Base de données', 'PHP/JavaScript', 'Laravel']
+    },
+    {
+      title: 'Bac Pro MELEC',
+      school: 'Métiers de Électricité',
+      description: 'et de ses Environnements Connectés',
+      period: '2019 - 2022',
+      color: 'from-orange-500 to-red-500',
+      skills: ['Systèmes électriques', 'Domotique', 'Équipements connectés', 'Maintenance']
+    }
+  ];
+
   return (
-    <main className="flex-1 p-8">
-      <header className="w-full text-center mb-8">
-        <h1 className="italic text-5xl font-bold animate-fade-in-down">Mes formations</h1>
-      </header>
+    <div className="animate-fade-in">
+      <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+        Formations
+      </h1>
+      <p className="text-center text-gray-500 mb-16 text-lg">Mon parcours scolaire</p>
 
-      <section>
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl ml-5 animate-fade-in-up">
-          <div className="p-6 bg-gray-100 rounded-lg shadow-lg hidden-on-load slide-up flex flex-col items-center animate-fade-in-up">
-            <h3 className="italic text-gray-700 text-2xl font-semibold mb-3 animate-fade-in-up">Bac Pro MELEC</h3>
-            <p className="italic text-gray-700 text-center mb-2 animate-fade-in-up">Métiers de l'Électricité et de ses Environnements Connectés.</p>
-            <span className="italic text-sm text-gray-500 mb-4 animate-fade-in-up">2019 - 2022</span>
+      <div className="space-y-8">
+        {formations.map((formation, idx) => (
+          <div
+            key={idx}
+            className="group bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
+          >
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{formation.title}</h3>
+                <p className="text-xl text-gray-300">{formation.school}</p>
+                <p className="text-gray-500">{formation.description}</p>
+              </div>
+              <div className={`mt-4 md:mt-0 px-6 py-3 bg-gradient-to-r ${formation.color} rounded-full text-white font-semibold shadow-lg`}>
+                {formation.period}
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-2">
+              {formation.skills.map((skill, i) => (
+                <span
+                  key={i}
+                  className="px-4 py-2 bg-white/5 rounded-lg text-sm text-gray-400 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-          
-          <div className="p-6 bg-gray-100 rounded-lg shadow-lg hidden-on-load slide-up delay-300 flex flex-col items-center animate-fade-in-up">
-            <h3 className="italic text-gray-700 text-2xl font-semibold mb-3 animate-fade-in-up">BTS SIO (SLAM)</h3>
-            <p className="italic text-gray-700 text-center mb-2 animate-fade-in-up">Services Informatiques aux Organisations, option Développement.</p>
-            <span className="italic text-sm text-gray-500 mb-4 animate-fade-in-up">2022 - 2024</span>
-          </div>
-          
-          <div className="p-6 bg-gray-100 rounded-lg shadow-lg hidden-on-load slide-up flex flex-col items-center animate-fade-in-up">
-            <h3 className="italic text-gray-700 text-2xl font-semibold mb-3 animate-fade-in-up">Master of Sciences</h3>
-            <p className="italic text-gray-700 text-center mb-2 animate-fade-in-up"></p>
-            <span className="italic text-sm text-gray-500 mb-4 animate-fade-in-up">2025 - 2028</span>
-          </div>
-        </div>
-      </section>
-    </main>
+        ))}
+      </div>
+    </div>
   );
-};
+}
+
+
 
 export default Formation;
