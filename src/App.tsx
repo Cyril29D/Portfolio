@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X, Mail, Code, Briefcase, GraduationCap, User } from 'lucide-react';
 
 import Profil from './contenaire/Profil';
@@ -9,9 +9,8 @@ import Project from "./contenaire/Project";
 import Competences from './contenaire/Competences';
 
 function App() {
- const [currentPage, setCurrentPage] = useState('profil');
+  const [currentPage, setCurrentPage] = useState('profil');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 
   const navItems = [
     { id: 'profil', label: 'Profil', icon: User },
