@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
-
+import photoProfile from "../assets/photo_profile2.jpg";
 
 function Profil() {
 const [displayText, setDisplayText] = useState('');
@@ -49,7 +49,7 @@ const [displayText, setDisplayText] = useState('');
           <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
           <div className="relative bg-gray-900 rounded-2xl p-2">
             <div className="w-full h-96 bg-gradient-to-br from-gray-900 to-black rounded-xl flex items-center justify-center">
-              <User size={120} className="text-gray-700" />
+              <img  src={photoProfile} alt="Photo de profil " className="w-full h-96 object-cover rounded-xl" />
             </div>
           </div>
         </div>
