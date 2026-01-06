@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { User } from 'lucide-react';
 import photoProfile from "../assets/photo_profile2.jpg";
 
 function Profil() {
