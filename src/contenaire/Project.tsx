@@ -6,7 +6,7 @@ const projets = [
     {
       title: 'Application React + Vite',
       description: 'Application de compteur interactive',
-      period: '2024',
+      period: '2025',
       tech: ['React', 'Vite', 'JavaScript', 'Hooks'],
       features: [
         'Interface interactive avec React et Vite',
@@ -41,7 +41,61 @@ const projets = [
         'Interface admin responsive'
       ],
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      title: 'Jeux de rythme à défilement vertical',
+      description: 'Un jeu de rythme à défilement vertical développé en Java avec libGDX par Willy Keosouvanh, Cyril Delly et Thibault Feat. Ce projet a été réalisé dans le cadre de la Pre-MSc à Epitech',
+      period: '2025',
+      tech: ['Java', 'libGDX', 'Gradle'],
+      features: [
+        'Défilement vertical synchronisé avec la musique',
+        'Mécaniques de jeu engageantes',
+        'Graphismes et animations fluides',
+        'Système de score et de niveaux'
+      ],
+      color: 'from-green-500 to-teal-500'
+    },
+    {
+      title: 'Jeu pendu dans le terminal',
+      description: 'Un jeu du pendu simple développé en Python. Ce projet a été réalisé dans le cadre de la Pre-MSc à Epitech',
+      period: '2025',
+      tech: ['Python'],
+      features: [
+        'Interface en ligne de commande',
+        'Logique de jeu basique',
+        'Gestion des entrées utilisateur',
+        'Affichage du mot à deviner et des tentatives'
+      ],
+      color: 'from-yellow-500 to-amber-500'
     }
+    ,
+    {
+      title: 'Job Board — Plateforme d’offres d’emploi',
+      description: 'Une plateforme web de publication et de recherche d’offres d’emploi, développée en Ruby on Rails avec une base de données PostgreSQL. Ce projet a été réalisé dans le cadre de la Pre-MSc à Epitech',
+      period: '2025',
+      tech: ['React', 'PostgreSQL', 'Tailwind CSS'],
+      features: [
+        'Interface utilisateur réactive avec React',
+        'Système de gestion des offres d’emploi',
+        'Recherche et filtrage avancés',
+        'Design moderne avec Tailwind CSS'
+      ],
+      color: 'from-indigo-500 to-purple-500'
+    },
+    {
+      title: 'MY_MARVIN – Jenkins as Code',
+      description: 'un projet DevOps dont l’objectif est de configurer une instance Jenkins entièrement par le code, sans aucune action manuelle.',
+      period: '2025',
+      tech: ['Jenkins', 'Groovy', 'Docker', 'git'],
+      features: [
+        'Configuration automatisée de Jenkins via des scripts Groovy',
+        'Utilisation de Docker pour l\'isolation des environnements',
+        'Gestion du code source avec git',
+        'Déploiement continu et intégration continue (CI/CD)'
+      ],
+      color: 'from-red-500 to-pink-500'
+    }
+
   ];
 
   return (
