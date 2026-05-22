@@ -1,46 +1,35 @@
 import { Code } from 'lucide-react';
-
+import MyJob from "../assets/MyJob.png"
 
 function Project(){
 const projets = [
-    {
-      title: 'Application React + Vite',
-      description: 'Application de compteur interactive',
-      period: '2025',
-      tech: ['React', 'Vite', 'JavaScript', 'Hooks'],
-      features: [
-        'Interface interactive avec React et Vite',
-        'Système de compteur avec mise à jour dynamique',
-        'Utilisation de composants fonctionnels',
-        'Rechargement à chaud (HMR)'
-      ],
-      color: 'from-cyan-500 to-blue-500'
-    },
-    {
-      title: 'Site WordPress E-commerce',
-      description: 'Plateforme de vente en ligne',
-      period: '2024',
-      tech: ['WordPress', 'DIVI', 'PHP', 'WooCommerce'],
-      features: [
-        'Design responsive et moderne',
-        'Intégration de systèmes de paiement',
-        'Gestion de contenu dynamique',
-        'Optimisation SEO'
-      ],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Application Laravel',
-      description: 'Système de gestion complet',
-      period: '2023',
-      tech: ['Laravel', 'MySQL', 'Bootstrap', 'API REST'],
-      features: [
-        'Architecture MVC complète',
-        'Authentification et autorisation',
-        'CRUD complet avec base de données',
-        'Interface admin responsive'
-      ],
-      color: 'from-orange-500 to-red-500'
+  {
+  title: 'TalkMe - plateforme de conversation',
+  description: 'Application de messagerie en temps réel',
+  period: '2026',
+  tech: ['NextJs', 'Nest', 'Socket.io', 'Supabase','Prisma'],
+  features: [
+    'Gestion des comptes',
+    'Serveurs & salons',
+    'Messagerie instantanée en temps réel',
+    'Création et gestion de conversations',
+    'Authentification des utilisateurs',
+    'Interface moderne et responsive'
+  ],
+  color: 'from-purple-500 to-pink-500',
+},
+{
+  title: 'MY_MARVIN – Jenkins as Code',
+  description: 'un projet DevOps dont l’objectif est de configurer une instance Jenkins entièrement par le code, sans aucune action manuelle.',
+  period: '2025',
+  tech: ['Jenkins', 'Groovy', 'Docker', 'git'],
+  features: [
+    'Configuration automatisée de Jenkins via des scripts Groovy',
+    'Utilisation de Docker pour l\'isolation des environnements',
+    'Gestion du code source avec git',
+    'Déploiement continu et intégration continue (CI/CD)'
+  ],
+  color: 'from-red-500 to-pink-500'
     },
     {
       title: 'Jeux de rythme à défilement vertical',
@@ -80,21 +69,11 @@ const projets = [
         'Recherche et filtrage avancés',
         'Design moderne avec Tailwind CSS'
       ],
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-indigo-500 to-purple-500',
+      photo: MyJob
+      //url: ''
     },
-    {
-      title: 'MY_MARVIN – Jenkins as Code',
-      description: 'un projet DevOps dont l’objectif est de configurer une instance Jenkins entièrement par le code, sans aucune action manuelle.',
-      period: '2025',
-      tech: ['Jenkins', 'Groovy', 'Docker', 'git'],
-      features: [
-        'Configuration automatisée de Jenkins via des scripts Groovy',
-        'Utilisation de Docker pour l\'isolation des environnements',
-        'Gestion du code source avec git',
-        'Déploiement continu et intégration continue (CI/CD)'
-      ],
-      color: 'from-red-500 to-pink-500'
-    }
+
 
   ];
 
@@ -109,12 +88,15 @@ const projets = [
         {projets.map((projet, idx) => (
           <div
             key={idx}
-            className="group bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2"
+            className="group bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 overflow-hidden"
           >
             <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${projet.color} flex items-center justify-center mb-4`}>
               <Code className="text-white" size={24} />
             </div>
-            
+            <button className={`inline-block px-4 py-1 bg-gradient-to-r ${projet.color} rounded-full text-white text-sm font-semibold mb-4`}>
+              Lien vers Github
+            <a href="https://github.com/Cyril29D/ProjetBar_FullStack"></a>
+            </button>
             <h3 className="text-2xl font-bold text-white mb-2">{projet.title}</h3>
             <p className="text-gray-500 mb-4">{projet.description}</p>
             
@@ -141,6 +123,11 @@ const projets = [
                 </li>
               ))}
             </ul>
+            {(Array.isArray(projet.photo) ? projet.photo : [projet.photo]).filter((photo) => Boolean(photo)).map((photo, p) => (
+            <div key= {p}className="w-full h-48 rounded-xl mt-4">
+              <img  src={photo} className="w-full h-full object-cover rounded-xl" />
+            </div>
+            ))}
           </div>
         ))}
       </div>
