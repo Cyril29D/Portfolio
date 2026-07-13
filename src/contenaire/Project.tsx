@@ -1,5 +1,6 @@
 import { Code } from 'lucide-react';
 import MyJob from "../assets/MyJob.png"
+import Neozik from "../assets/neozik.png"
 
 function Project(){
 const projets = [
@@ -42,7 +43,9 @@ const projets = [
         'Graphismes et animations fluides',
         'Système de score et de niveaux'
       ],
-      color: 'from-green-500 to-teal-500'
+      color: 'from-green-500 to-teal-500',
+      url: "https://github.com/Cyril29D/Neozik",
+      photo: Neozik
     },
     {
       title: 'Jeu pendu dans le terminal',
@@ -70,8 +73,8 @@ const projets = [
         'Design moderne avec Tailwind CSS'
       ],
       color: 'from-indigo-500 to-purple-500',
-      photo: MyJob
-      //url: ''
+      photo: MyJob,
+      url: 'https://github.com/Cyril29D/MesAnimes_Laravel'
     },
 
 
@@ -90,13 +93,21 @@ const projets = [
             key={idx}
             className="group bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 overflow-hidden"
           >
+
+            <div></div>
             <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${projet.color} flex items-center justify-center mb-4`}>
               <Code className="text-white" size={24} />
             </div>
+
+            <div>
+            {projet.url && (
+            <a href={projet.url} target="_blank" rel="github">
             <button className={`inline-block px-4 py-1 bg-gradient-to-r ${projet.color} rounded-full text-white text-sm font-semibold mb-4`}>
-              Lien vers Github
-            <a href="https://github.com/Cyril29D/ProjetBar_FullStack"></a>
-            </button>
+                Lien vers Github
+           </button>
+            </a>
+)}
+            </div>
             <h3 className="text-2xl font-bold text-white mb-2">{projet.title}</h3>
             <p className="text-gray-500 mb-4">{projet.description}</p>
             
