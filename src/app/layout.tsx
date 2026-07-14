@@ -10,8 +10,11 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Cyril Delly — Développeur Full-Stack",
+  title: "CD — Portfolio",
   description: "Portfolio et CV de Cyril Delly, étudiant Master of Sciences à Epitech, développeur full-stack.",
+  icons: {
+    icon: "/images/logo/logo.svg",
+  },
 };
 
 export default function RootLayout({
