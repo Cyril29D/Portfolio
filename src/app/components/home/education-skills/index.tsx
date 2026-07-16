@@ -25,8 +25,8 @@ const EducationSkills = () => {
         <div className="container relative z-10">
           <div className="relative z-10 py-16 md:py-32">
             <div className="flex items-center justify-between gap-2 border-b border-foreground pb-7 mb-9 xl:mb-16">
-              <h2>Formation & Compétences</h2>
-              <p className="text-xl text-primary">( 03 )</p>
+              <h2>Formation & compétences</h2>
+              <p className="text-xl text-primary">( 01 )</p>
             </div>
             <div className="flex flex-col lg:flex-row items-center gap-10 xl:gap-20">
               <div className="w-full lg:max-w-md flex flex-col gap-0 xl:gap-8">

@@ -16,29 +16,31 @@ const index = () => {
                 <div className="wave">
                   <Image
                     src={"/images/home/banner/wave-icon.svg"}
-                    alt="wave-icon"
+                    alt="Main qui salue"
                     width={62}
                     height={62}
                     className=""
                   />
                 </div>
               </div>
-              <h1>MSc Architecte de Systèmes d&apos;Information</h1>
+              <h1>MSc Architecte de systèmes d’information</h1>
             </div>
             <p className="text-muted-foreground font-normal max-w-md xl:max-w-xl">
-              MSc Architecte de Systèmes d&apos;Information à Epitech. À la
-              recherche d&apos;une alternance en développement full stack, DevOps
+              MSc Architecte de systèmes d’information à Epitech. À la
+              recherche d’une alternance en développement full-stack, DevOps
               ou IA.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="#projets"
+                data-umami-event="Voir mes projets"
                 className="rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-85"
               >
                 Voir mes projets
               </Link>
               <Link
                 href="#contact"
+                data-umami-event="Me contacter"
                 className="rounded-full border border-primary px-5 py-3 font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 Me contacter

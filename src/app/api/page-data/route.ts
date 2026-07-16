@@ -32,16 +32,16 @@ const contactBar = {
 const educationData = {
   education: [
     {
-      title: "Master of Sciences — Epitech (2025 - 2028)",
-      description: "Formation d'excellence en informatique et technologies : intelligence artificielle, cloud computing, architecture logicielle, management de projet."
+      title: "Master of Science — Epitech (2025–2028)",
+      description: "Formation d’excellence en informatique et en technologies numériques : intelligence artificielle, cloud computing, architecture logicielle et gestion de projet."
     },
     {
-      title: "BTS SIO, option SLAM — (2022 - 2024)",
-      description: "Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers : développement web, bases de données, PHP/JavaScript, Laravel."
+      title: "BTS SIO, option SLAM (2022–2024)",
+      description: "Services informatiques aux organisations, option solutions logicielles et applications métiers : développement web, bases de données, PHP, JavaScript et Laravel."
     },
     {
-      title: "Bac Pro MELEC — (2019 - 2022)",
-      description: "Métiers de l'Électricité et de ses Environnements Connectés : systèmes électriques, domotique, équipements connectés, maintenance."
+      title: "Bac professionnel MELEC (2019–2022)",
+      description: "Métiers de l’électricité et de ses environnements connectés : systèmes électriques, domotique, équipements connectés et maintenance."
     }
   ],
   skills: [

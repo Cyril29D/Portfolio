@@ -33,6 +33,9 @@ const ContactBar = () => {
                   <Link
                     key={index}
                     href={value?.link}
+                    data-umami-event={
+                      value?.type === "email" ? "Clic email" : undefined
+                    }
                     className="flex items-center gap-2 lg:gap-4 text-sm md:text-base"
                   >
                     <Image
@@ -60,6 +63,11 @@ const ContactBar = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={value?.platform}
+                  data-umami-event={
+                    value?.platform === "linkedin"
+                      ? "Clic LinkedIn"
+                      : "Clic GitHub"
+                  }
                   className={`rounded-full transition-transform hover:-translate-y-0.5 ${
                     value?.platform === "linkedin"
                       ? "drop-shadow-[0_4px_10px_rgba(10,102,194,0.3)]"

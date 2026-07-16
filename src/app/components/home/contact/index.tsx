@@ -8,6 +8,11 @@ import Link from "next/link";
 import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
+type UmamiWindow = Window & {
+  umami?: {
+    track: (eventName: string, data?: Record<string, string>) => void;
+  };
+};
 const WEB3FORMS_ACCESS_KEY =
   process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
 
@@ -77,6 +82,7 @@ const Contact = () => {
 
       reset();
       setSubmitStatus("success");
+      (window as UmamiWindow).umami?.track("Envoi formulaire contact");
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire :", error);
       setSubmitStatus("error");
@@ -103,7 +109,7 @@ const Contact = () => {
         <div className="pt-16 md:pt-32 pb-20">
           <div className="flex items-center justify-between gap-2 border-b border-foreground pb-7 mb-9 md:mb-16">
             <h2>Me contacter</h2>
-            <p className="text-xl text-primary">( 05 )</p>
+            <p className="text-xl text-primary">( 04 )</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <form onSubmit={handleSubmit}>
@@ -111,7 +117,7 @@ const Contact = () => {
                 <div className="grid grid-cols-2 gap-8">
                   <div>
                     <Label htmlFor="name" className="label">
-                      Prénom & Nom *
+                      Prénom et nom *
                     </Label>
                     <Input
                       required
@@ -172,7 +178,7 @@ const Contact = () => {
                     <div className="flex items-center gap-2">
                       <Image
                         src={"/images/icon/success-icon.svg"}
-                        alt="success-icon"
+                        alt="Message envoyé"
                         width={30}
                         height={30}
                       />
@@ -215,6 +221,11 @@ const Contact = () => {
                         href={value?.href}
                         target="_blank"
                         rel="noreferrer"
+                        data-umami-event={
+                          value?.title === "LinkedIn"
+                            ? "Clic LinkedIn"
+                            : "Clic GitHub"
+                        }
                         className={`inline-flex rounded-full px-5 py-2.5 text-base sm:text-lg font-medium text-white transition-transform hover:-translate-y-0.5 ${
                           value?.title === "LinkedIn"
                             ? "bg-[#0A66C2] hover:bg-[#004182]"
@@ -233,6 +244,9 @@ const Contact = () => {
                     <div key={index}>
                       <Link
                         href={value?.link}
+                        data-umami-event={
+                          value?.type === "email" ? "Clic email" : undefined
+                        }
                         className="text-base lg:text-lg text-foreground font-normal border-b border-foreground pb-3 hover:text-primary hover:border-primary"
                       >
                         {value?.label}

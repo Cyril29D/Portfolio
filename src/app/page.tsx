@@ -1,4 +1,3 @@
-import AboutMe from "./components/home/about-me"
 import Contact from "./components/home/contact"
 import EducationSkills from "./components/home/education-skills"
 import ExperienceSec from "./components/home/experience-sec"
@@ -9,13 +8,12 @@ import LatestWork from "./components/home/latest-work"
 const page = () => {
   return (
     <>
-      <main>
+      <main className="portfolio-background">
         <HeroSection />
         <ContactBar />
-        <AboutMe />
-        <ExperienceSec />
         <EducationSkills />
         <LatestWork />
+        <ExperienceSec />
         <Contact />
       </main>
     </>

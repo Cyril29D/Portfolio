@@ -3,37 +3,37 @@ import React from "react";
 const ExperienceSec = () => {
   const experiences = [
     {
-      year: "Janv. - Juin 2024",
-      title: "Inventoriste - Étalagiste",
+      year: "Janvier – juin 2024",
+      title: "Inventoriste – étalagiste",
       company: "Placidom",
       type: "Mission",
       tasks: [
         "Comptage et rangement de marchandises",
-        "Scannage de référence et saisie de quantités",
-        "Facing, nettoyage, remplissage de rayon",
+        "Scannage des références et saisie des quantités",
+        "Facing, nettoyage et remplissage des rayons",
       ],
     },
     {
       year: "Janvier 2024",
-      title: "Création et Gestion de Contenu — Stage",
+      title: "Création et gestion de contenu — stage",
       company: "France Service",
       type: "Stage",
       tasks: [
         "Mise à jour de contenus",
-        "Création de site sous WordPress avec DIVI",
+        "Création d’un site sous WordPress avec Divi",
         "Rédaction du cahier des charges",
       ],
     },
     {
-      year: "2022 - 2024",
-      title: "Travaux Pratiques en Développement Full-Stack",
-      company: "École | AMEP Redoute",
+      year: "2022–2024",
+      title: "Travaux pratiques en développement full-stack",
+      company: "École — AMEP Redoute",
       type: "Formation",
       tasks: [
-        "Gestion de bases de données via MySQL et PHPMyAdmin",
+        "Gestion de bases de données avec MySQL et phpMyAdmin",
         "Création de sites web avec PHP, JavaScript, HTML et CSS",
-        "Réalisation d'applications web avec Laravel",
-        "Développement d'applications desktop avec Java",
+        "Réalisation d’applications web avec Laravel",
+        "Développement d’applications de bureau avec Java",
       ],
     },
   ];
@@ -43,8 +43,8 @@ const ExperienceSec = () => {
       <div className="py-16 md:py-32">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between gap-2 border-b border-foreground pb-7 mb-9 md:mb-16">
-            <h2>Expérience</h2>
-            <p className="text-xl text-primary">( 02 )</p>
+            <h2>Expériences</h2>
+            <p className="text-xl text-primary">( 03 )</p>
           </div>
 
           <div className="space-y-7 md:space-y-12">

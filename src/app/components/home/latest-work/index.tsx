@@ -4,6 +4,85 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
+type ProjectMediaProps = {
+  title?: string;
+  image?: string;
+  images?: string[];
+};
+
+const ProjectMedia = ({ title, image, images }: ProjectMediaProps) => {
+  const media = images?.length ? images : image ? [image] : [];
+  const [activeImage, setActiveImage] = useState(0);
+
+  if (!media.length) {
+    return (
+      <div className="rounded-lg w-full h-60 xl:h-72 bg-card border border-border flex items-center justify-center">
+        <span className="text-5xl font-semibold text-muted-foreground">
+          {title?.charAt(0)}
+        </span>
+      </div>
+    );
+  }
+
+  const showPrevious = () => {
+    setActiveImage((current) => (current - 1 + media.length) % media.length);
+  };
+
+  const showNext = () => {
+    setActiveImage((current) => (current + 1) % media.length);
+  };
+
+  return (
+    <div className="relative h-60 xl:h-72 overflow-hidden rounded-lg bg-black">
+      <Image
+        src={media[activeImage]}
+        alt={`${title ?? "Projet"} — aperçu ${activeImage + 1}`}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-contain transition-opacity duration-300"
+      />
+
+      {media.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={showPrevious}
+            aria-label="Image précédente de TalkMe"
+            className="absolute left-3 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/65 text-white backdrop-blur-sm transition-colors hover:bg-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={showNext}
+            aria-label="Image suivante de TalkMe"
+            className="absolute right-3 top-1/2 z-10 flex size-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/65 text-white backdrop-blur-sm transition-colors hover:bg-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+          <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2 rounded-full bg-black/55 px-3 py-2 backdrop-blur-sm">
+            {media.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                aria-label={`Afficher l'image ${index + 1} de TalkMe`}
+                className={`size-2 rounded-full transition-colors ${
+                  activeImage === index ? "bg-primary" : "bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 const LatestWork = () => {
   const [workData, setWorkData] = useState<any>(null);
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -55,12 +134,12 @@ const LatestWork = () => {
 
   return (
     <section id="projets" className="scroll-mt-24">
-      <div className="bg-muted">
+      <div className="bg-muted/70 backdrop-blur-sm">
         <div className="container">
           <div className="py-16 xl:py-32 ">
             <div className="flex items-center justify-between gap-2 border-b border-foreground pb-7 mb-9 md:mb-16">
               <h2>Projets</h2>
-              <p className="text-xl text-primary">( 04 )</p>
+              <p className="text-xl text-primary">( 02 )</p>
             </div>
 
             <div className="overflow-hidden" ref={emblaRef}>
@@ -69,21 +148,11 @@ const LatestWork = () => {
                   const CardInner = (
                     <>
                       <div className="relative">
-                        {value?.image ? (
-                          <Image
-                            src={value.image}
-                            alt={value?.title}
-                            width={570}
-                            height={414}
-                            className="rounded-lg w-full h-60 xl:h-72 object-cover"
-                          />
-                        ) : (
-                          <div className="rounded-lg w-full h-60 xl:h-72 bg-card border border-border flex items-center justify-center">
-                            <span className="text-5xl font-semibold text-muted-foreground">
-                              {value?.title?.charAt(0)}
-                            </span>
-                          </div>
-                        )}
+                        <ProjectMedia
+                          title={value?.title}
+                          image={value?.image}
+                          images={value?.images}
+                        />
                         {value?.url && (
                           <span className="absolute top-0 left-0 backdrop-blur-xs bg-primary/15 w-full h-full hidden group-hover:flex rounded-lg">
                             <span className="flex justify-center items-center p-5 w-full">
@@ -151,6 +220,8 @@ const LatestWork = () => {
                           href={value.url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          data-umami-event="Clic projet"
+                          data-umami-event-projet={value?.title}
                           className="flex flex-col gap-3 xl:gap-6"
                         >
                           {CardInner}
