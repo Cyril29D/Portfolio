@@ -37,7 +37,7 @@ body {
   mask-image: linear-gradient(to bottom, black, transparent 38%);
 }
 
-button::before {
+.button-fill::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -47,9 +47,10 @@ button::before {
   background-color: #4C8FB0;
   transition: height 0.3s ease;
   z-index: 0;
+  pointer-events: none;
 }
 
-button:hover::before {
+.button-fill:hover::before {
   height: 100%;
 }
 
