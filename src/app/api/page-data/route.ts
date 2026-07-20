@@ -19,7 +19,7 @@ const contactBar = {
     {
       platform: "linkedin",
       icon: "/images/icon/linkedin-icon.svg",
-      link: "https://www.linkedin.com/in/cyril-delly"
+      link: "https://www.linkedin.com/in/cyr-d/"
     },
     {
       platform: "github",
@@ -60,7 +60,7 @@ const contactLinks = {
   socialLinks: [
     {
       title: "LinkedIn",
-      href: "https://www.linkedin.com/in/cyril-delly"
+      href: "https://www.linkedin.com/in/cyr-d/"
     },
     {
       title: "GitHub",
