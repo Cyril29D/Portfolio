@@ -23,6 +23,15 @@ const workData = [
     slug: "bernstein"
   },
   {
+    title: "JOJA — Analyse des habitudes d’achat",
+    description: "Analyse de plusieurs millions de commandes avec Python et Jupyter pour identifier les habitudes d’achat, les produits populaires et formuler des recommandations commerciales.",
+    period: "2026",
+    tech: ["Python", "Jupyter", "Pandas", "NumPy", "Matplotlib", "Seaborn", "scikit-learn"],
+    image: "/images/work/joja-data-analysis.svg",
+    url: "https://github.com/Cyril29D/Joja-Data-Analysis",
+    slug: "joja-data-analysis"
+  },
+  {
     title: "AgentMerchant — Plateforme commerciale intelligente",
     description: "Application d’assistance commerciale pour agents et marchands, avec gestion des produits, des commandes et des paiements.",
     period: "2026",

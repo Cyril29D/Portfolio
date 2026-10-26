@@ -1,0 +1,53 @@
+<svg width="1680" height="942" viewBox="0 0 1680 942" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1680" y2="942" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080F2B"/>
+      <stop offset="0.58" stop-color="#111C45"/>
+      <stop offset="1" stop-color="#073C4C"/>
+    </linearGradient>
+    <linearGradient id="lineA" x1="350" y1="610" x2="1330" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19D3D0"/><stop offset="1" stop-color="#66A6FF"/>
+    </linearGradient>
+    <linearGradient id="lineB" x1="390" y1="600" x2="1300" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/><stop offset="1" stop-color="#F6B94A"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse"><path d="M70 0H0V70" stroke="#6D89C8" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="1680" height="942" rx="28" fill="url(#bg)"/>
+  <rect width="1680" height="942" rx="28" fill="url(#grid)"/>
+  <circle cx="1500" cy="92" r="300" fill="#17D6D0" fill-opacity=".08"/>
+  <circle cx="140" cy="820" r="300" fill="#3154E8" fill-opacity=".12"/>
+
+  <g opacity=".9">
+    <rect x="96" y="176" width="72" height="254" rx="10" fill="#3F62E8"/>
+    <rect x="190" y="245" width="72" height="185" rx="10" fill="#268DF0"/>
+    <rect x="284" y="118" width="72" height="312" rx="10" fill="#20BDD2"/>
+    <rect x="378" y="210" width="72" height="220" rx="10" fill="#8E7CF2"/>
+    <rect x="472" y="151" width="72" height="279" rx="10" fill="#F5B94E"/>
+  </g>
+  <path d="M80 430H554" stroke="#8BB2FF" stroke-opacity=".35" stroke-width="2"/>
+
+  <g opacity=".45" stroke="#A8BFFF" stroke-dasharray="5 9">
+    <path d="M610 150V684"/><path d="M805 150V684"/><path d="M1000 150V684"/><path d="M1195 150V684"/>
+    <path d="M610 250H1370"/><path d="M610 395H1370"/><path d="M610 540H1370"/><path d="M610 684H1370"/>
+  </g>
+  <path d="M610 558C670 520 698 545 752 460C804 379 824 502 884 432C941 366 972 404 1024 300C1078 193 1134 374 1194 287C1255 198 1266 263 1370 170" stroke="url(#lineA)" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M610 584C683 574 710 414 780 500C844 580 890 510 946 525C1009 542 1028 400 1090 427C1151 456 1194 370 1245 404C1299 441 1324 344 1370 365" stroke="url(#lineB)" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#53E5E5" stroke="#132A5D" stroke-width="7"><circle cx="752" cy="460" r="12"/><circle cx="884" cy="432" r="12"/><circle cx="1024" cy="300" r="12"/><circle cx="1194" cy="287" r="12"/><circle cx="1370" cy="170" r="12"/></g>
+
+  <g transform="translate(1070 710)">
+    <circle cx="100" cy="96" r="92" fill="#102C63" stroke="#24D5D0" stroke-width="5"/>
+    <circle cx="100" cy="96" r="35" fill="#21C9CE" fill-opacity=".18" stroke="#24D5D0" stroke-width="4"/>
+    <path d="M82 82H118L112 120H88L82 82Z" stroke="#5BECE1" stroke-width="7" stroke-linejoin="round"/><path d="M75 82H125M91 72C91 63 109 63 109 72" stroke="#5BECE1" stroke-width="7" stroke-linecap="round"/>
+    <g fill="#F6B94A" stroke="#132A5D" stroke-width="5"><circle cx="4" cy="20" r="28"/><circle cx="195" cy="8" r="28"/><circle cx="214" cy="172" r="28"/><circle cx="-10" cy="188" r="28"/></g>
+    <g stroke="#66A6FF" stroke-width="4" stroke-dasharray="6 8"><path d="M28 31L73 72"/><path d="M171 29L130 72"/><path d="M188 155L130 117"/><path d="M15 169L70 119"/></g>
+  </g>
+
+  <g transform="translate(70 610)">
+    <path d="M0 45H42L78 230H408L453 72H68" stroke="#B8D2FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="124" cy="270" r="25" fill="#162D62" stroke="#B8D2FF" stroke-width="9"/><circle cx="367" cy="270" r="25" fill="#162D62" stroke="#B8D2FF" stroke-width="9"/>
+    <path d="M100 115C128 72 164 89 190 122C220 162 240 75 276 98C307 118 342 78 372 113" stroke="#20D3D3" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="158" cy="128" r="36" fill="#F5B94E"/><circle cx="246" cy="126" r="36" fill="#EF6D60"/><circle cx="333" cy="133" r="36" fill="#71D180"/>
+  </g>
+</svg>
